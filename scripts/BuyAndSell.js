@@ -1,4 +1,4 @@
-const {deployBuyAndSell2} = require ("./deploy")
+const {deployBuyAndSell} = require ("./deploy")
 const { ethers } = require("hardhat");
 
 

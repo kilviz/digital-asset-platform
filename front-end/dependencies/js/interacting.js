@@ -1,5 +1,6 @@
 const wallet_btn = document.getElementById("connect-wallet")
 
+// export { getFreeItemsAddress, buyAndSellAddress, auctionAndBidsAddress } from 'scripts/deploy.js';
 
 // main var 
 export let provider = new ethers.providers.Web3Provider(window.ethereum)
