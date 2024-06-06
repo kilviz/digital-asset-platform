@@ -25,29 +25,29 @@ function renderCards(title, nftId, price, src,productId) {
         </div>        
     </div>`
 }
-window.onload = renderGames()
+window.onload = renderEstates()
 
 
-async function renderGames() {
-    ItemTitle.textContent = "All availabe Games"
-    games1.style.visibility = "hidden"
+async function renderEstates() {
+    ItemTitle.textContent = "All availabe Estates"
+    estates1.style.visibility = "hidden"
     music1.style.visibility = "visible"
     films1.style.visibility = "visible"
 
-    const gameImg = "dependencies/img/game.png"
+    const estateImg = "dependencies/img/real_estate.jpg"
     const allOnSellProduct = await SellAndBuyContract.getTotalProductCreated()
     for (let index = 1; index <= allOnSellProduct; index++) {
         const product = await SellAndBuyContract.getProductDetail(index)
         const item = await FreeItemsContract.getItemDetails(product.itemId)
         if (item._type == 1 && product.isSold === false) {
 
-            renderCards("Game", item.id, ethers.utils.formatEther(product.price), gameImg,product.id)
+            renderCards("Estate", item.id, ethers.utils.formatEther(product.price), estateImg,product.id)
         }
     }
 }
 async function renderFilms() {
-    ItemTitle.textContent = "All availabe Palyers"
-    games1.style.visibility = "visible"
+    ItemTitle.textContent = "All availabe Films"
+    estates1.style.visibility = "visible"
     music1.style.visibility = "visible"
     films1.style.visibility = "hidden"
 
@@ -58,13 +58,13 @@ async function renderFilms() {
         const item = await FreeItemsContract.getItemDetails(product.itemId)
         if (item._type == 2 && product.isSold === false) {
 
-            renderCards("Game", item.id, ethers.utils.formatEther(product.price), filmImg,product.id)
+            renderCards("Estate", item.id, ethers.utils.formatEther(product.price), filmImg,product.id)
         }
     }
 }
 async function renderMusic() {
     ItemTitle.textContent = "All availabe Music"
-    games1.style.visibility = "visible"
+    estates1.style.visibility = "visible"
     music1.style.visibility = "hidden"
     films1.style.visibility = "visible"
 
@@ -81,9 +81,9 @@ async function renderMusic() {
 }
 
 
-document.getElementById("games1").addEventListener("click", () => {
+document.getElementById("estates1").addEventListener("click", () => {
     containerRow.innerHTML = ""
-    renderGames()
+    renderEstates()
 })
 document.getElementById("films1").addEventListener("click", () => {
     containerRow.innerHTML = ""

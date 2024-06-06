@@ -308,6 +308,11 @@ const getFreeItemAbi = [
         "internalType": "enum GetFreeItems.TYPE",
         "name": "itemType",
         "type": "uint8"
+      },
+      {
+        "internalType": "string",
+        "name": "text",
+        "type": "string"
       }
     ],
     "name": "getFreeItem",
@@ -346,6 +351,11 @@ const getFreeItemAbi = [
             "internalType": "bool",
             "name": "onSell",
             "type": "bool"
+          },
+          {
+            "internalType": "string",
+            "name": "text",
+            "type": "string"
           }
         ],
         "internalType": "struct GetFreeItems.ITEM",
@@ -406,6 +416,11 @@ const getFreeItemAbi = [
             "internalType": "bool",
             "name": "onSell",
             "type": "bool"
+          },
+          {
+            "internalType": "string",
+            "name": "text",
+            "type": "string"
           }
         ],
         "internalType": "struct GetFreeItems.ITEM[]",

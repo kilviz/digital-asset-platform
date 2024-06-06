@@ -28,6 +28,7 @@ contract GetFreeItems is ERC1155, Ownable{
         address owner;
         TYPE _type;
         bool onSell;
+        string text;
     }
 
     // ------------- Events -----------
@@ -53,13 +54,14 @@ contract GetFreeItems is ERC1155, Ownable{
 
     //  Get free items :)
 
-    function getFreeItem(TYPE itemType) external {
+    function getFreeItem(TYPE itemType, string memory text) external {
         itemId.increment();
         uint256 currentId = itemId.current();
         IdToItem[currentId].id = currentId;
         IdToItem[currentId]._type = itemType;
         IdToItem[currentId].owner = msg.sender;
         IdToItem[currentId].onSell = false;
+        IdToItem[currentId].text = text;
         _mint(msg.sender, currentId, 1, "");
         console.log("sender = '%s'",msg.sender);
         emit FreeItemMinted(currentId, msg.sender, itemType);

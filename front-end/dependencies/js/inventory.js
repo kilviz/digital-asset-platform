@@ -33,7 +33,7 @@ const badeAcutionSec = document.getElementById("badeAcutionSec")
 
 
 
-function renderCards(title, nftId, src) {
+function renderCards(title, nftId, src, text) {
     document.getElementById("containerRow").innerHTML += `<div class="col id="rowone"">
     
           <div class="card shadow-lg p-3 mb-5 bg-white rounded"  style="width: 16rem; ">
@@ -43,6 +43,7 @@ function renderCards(title, nftId, src) {
             
                 <h5 class="card-title">${title}</h5>
                 <span class="card-text ">Nft Id : <span class ="idSpan" >${nftId}</span></span><br>
+                <span class="card-text ">Nft Id : <span class ="idSpan" >${text}</span></span><br>
                 <button class="btn btn-danger" id="sellBtn" value="${nftId}">Sell</button>
                 <button class="btn btn-dark" id="auctionBtn" value="${nftId}">Auction</button>
             </div>
@@ -119,17 +120,17 @@ async function availableItems() {
     inAuction.innerHTML = ""
     const filmImg = "dependencies/img/film.jpg"
     const musicImg = "dependencies/img/music.jpg"
-    const gameImg = "dependencies/img/game.png"
+    const estateImg = "dependencies/img/real_estate.png"
     const allAvailableItems = await FreeItemsContract.getUserInventory(signer_address)
     for (let i = 0; i < allAvailableItems.length; i++) {
         if (allAvailableItems[i]._type == 2) {
-            renderCards("Film", allAvailableItems[i].id, filmImg)
+            renderCards("Film", allAvailableItems[i].id, filmImg, allAvailableItems[i].text)
         }
         if (allAvailableItems[i]._type == 1) {
-            renderCards("Game", allAvailableItems[i].id, gameImg)
+            renderCards("Estate", allAvailableItems[i].id, estateImg,allAvailableItems[i].text)
         }
         if (allAvailableItems[i]._type == 3) {
-            renderCards("Music", allAvailableItems[i].id, musicImg)
+            renderCards("Music", allAvailableItems[i].id, musicImg,allAvailableItems[i].text)
         }
     }
 
@@ -139,7 +140,7 @@ async function availableItems() {
 async function onSellItemsFunction() {
     const filmImg = "dependencies/img/film.jpg"
     const musicImg = "dependencies/img/music.jpg"
-    const gameImg = "dependencies/img/game.png"
+    const estateImg = "dependencies/img/real_estate.png"
     const allOnSellItems = await SellAndBuyContract.getUserOnSellItems(signer_address)
 
     console.log(allOnSellItems);
@@ -149,7 +150,7 @@ async function onSellItemsFunction() {
             renderOnSellItems("Film", item.id, ethers.utils.formatEther(allOnSellItems[i].price), filmImg)
         }
         if (item._type == 1) {
-            renderOnSellItems("Game", item.id, ethers.utils.formatEther(allOnSellItems[i].price), gameImg)
+            renderOnSellItems("Estate", item.id, ethers.utils.formatEther(allOnSellItems[i].price), estateImg)
         }
         if (item._type == 3) {
             renderOnSellItems("Music", item.id, ethers.utils.formatEther(allOnSellItems[i].price), musicImg)
@@ -161,7 +162,7 @@ async function onSellItemsFunction() {
 async function soldItems() {
     const filmImg = "dependencies/img/film.jpg"
     const musicImg = "dependencies/img/music.jpg"
-    const gameImg = "dependencies/img/game.png"
+    const estateImg = "dependencies/img/real_estate.png"
     const allSoldItems = await SellAndBuyContract.getUserSoldProducts(signer_address)
 
     for (let index = 0; index < allSoldItems.length; index++) {
@@ -171,7 +172,7 @@ async function soldItems() {
             renderSoldItems("Film", item.id, filmImg)
         }
         if (item._type == 1) {
-            renderSoldItems("Game", item.id, gameImg)
+            renderSoldItems("Estate", item.id, estateImg)
         }
         if (item._type == 3) {
             renderSoldItems("Music", item.id, musicImg)
@@ -195,7 +196,7 @@ function convertHMS(value) {
 async function renderBadeAution(){
     const filmImg = "dependencies/img/film.jpg"
     const musicImg = "dependencies/img/music.jpg"
-    const gameImg = "dependencies/img/game.png"
+    const estateImg = "dependencies/img/real_estate.png"
     const allAuctions = await AuctionAndBidsContract.totalAuctionsCreated()
 
     for (let index = 1; index <= allAuctions; index++) {
@@ -226,7 +227,7 @@ async function renderBadeAution(){
                     timeInS = "00:00:00"
                 }
                 
-                renderBadeAuction("Game", item.id, ethers.utils.formatEther(auction.highestBid), gameImg, timeInS, index,ethers.utils.formatEther(userBid))
+                renderBadeAuction("Estate", item.id, ethers.utils.formatEther(auction.highestBid), estateImg, timeInS, index,ethers.utils.formatEther(userBid))
             }
             if (item._type == 3) {
                 if(currentTime < auction.endAt){
@@ -244,7 +245,7 @@ async function renderBadeAution(){
 async function inAutionItems() {
     const filmImg = "dependencies/img/film.jpg"
     const musicImg = "dependencies/img/music.jpg"
-    const gameImg = "dependencies/img/game.png"
+    const estateImg = "dependencies/img/real_estate.png"
     const allAuctions = await AuctionAndBidsContract.totalAuctionsCreated()
     for (let index = 1; index <= allAuctions; index++) {
         
@@ -272,7 +273,7 @@ async function inAutionItems() {
                     timeInS = "00:00:00"
                 }
                 
-                renderInAuction("Game", item.id, ethers.utils.formatEther(auction.highestBid), gameImg, timeInS, index)
+                renderInAuction("Estate", item.id, ethers.utils.formatEther(auction.highestBid), estateImg, timeInS, index)
             }
             if (item._type == 3 && auction.start === true && auction.end === false) {
                 if(currentTime < auction.endAt){
