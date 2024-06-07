@@ -17,10 +17,10 @@ function renderCards(title, nftId, price, src,productId) {
             <div class="card-body">
   
                 <h5 class="card-title cardTitle">${title}</h5>
-                <span class="card-text">Nft Id : <span id="nft-film-id" >${nftId}</span></span><br>
-                <span class="card-text">Price: <span id="nft-film-id">${price}</span> Eth</span><br>
-                <button class="btn btn-danger" id="buyBtn" data-id="${productId}" data-price=${price}>Buy</button>
-                <button class="btn btn-dark" id="auctionBtn">Bid</button>
+                <span class="card-text">NFT Id : <span id="nft-film-id" >${nftId}</span></span><br>
+                <span class="card-text">Цена: <span id="nft-film-id">${price}</span> Eth</span><br>
+                <button class="btn btn-danger" id="buyBtn" data-id="${productId}" data-price=${price}>Купить</button>
+                <button class="btn btn-dark" id="auctionBtn">Ставка</button>
             </div>
         </div>        
     </div>`

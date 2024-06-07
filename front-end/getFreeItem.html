@@ -14,32 +14,28 @@
       <!-- NavBar -->
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Market</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
+            <a class="navbar-brand" href="">DigiTrade</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse nav-items" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                        <a class="nav-link" href="index.html">Главная</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " aria-current="page" href="auctions.html">Live Auctions</a>
+                        <a class="nav-link" href="auctions.html">Аукционы</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="getFreeItem.html">Выпуск NFT</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="getFreeItem.html">Mint</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link " aria-current="page" href="inventory.html">inventory</a>
+                        <a class="nav-link" href="inventory.html">Инвентарь</a>
                     </li>
                     <li class="nav-item button-wallet">
-                        <button type="button" id="connect-wallet" class="btn btn-secondary">Connect Metamask</button>
+                        <button type="button" id="connect-wallet" class="btn btn-secondary">Подключить Metamask</button>
                     </li>
                 </ul>
-
             </div>
         </div>
     </nav>
@@ -49,7 +45,7 @@
         <div class="modal-dialog modal-dialog-centered modal-dialog modal-sm" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalCenterTitle">Waiting transaction </h5>
+                    <h5 class="modal-title" id="exampleModalCenterTitle">Ожидание транзакции</h5>
                     </button>
                 </div>
                 <div class="modal-body">
@@ -62,47 +58,43 @@
             </div>
         </div>
     </div>
-
-    <!--second container-->
-    <div class="second-container">
+    <div class="second-container py-5">
         <div class="container">
-
             <div class="row mintfree">
-                <div class="col">
-                    <div class="card" style="width: 22rem;">
-                        <img src="dependencies/img/film.jpg" class="card-img-top" alt="...">
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="dependencies/img/film.jpg" class="card-img-top" alt="Film">
                         <div class="card-body">
-                            <h5 class="card-title">Mint Free Film </h5>
-                            <input type="text" id="input-field-film" placeholder="Enter your film description">
-                            <button class="btn btn-danger" id="free-mint-film">Free Mint</button>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="col">
-                    <div class="card" style="width: 22rem;">
-                        <img src="dependencies/img/music.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Mint free music </h5>
-                            <input type="text" id="input-field-music" placeholder="Enter your music description">
-                            <button class="btn btn-danger" id="free-mint-music">Free Mint</button>
+                            <h5 class="card-title">Выпустить фильм</h5>
+                            <input type="text" id="input-field-film" class="form-control mb-3" placeholder="Введите описание">
+                            <button class="btn btn-primary w-100" id="free-mint-film">Выпустить</button>
                         </div>
                     </div>
                 </div>
-                <div class="col">
-                    <div class="card" style="width: 22rem;">
-                        <img src="dependencies/img/real_estate.jpg" class="card-img-top" alt="...">
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="dependencies/img/music.jpg" class="card-img-top" alt="Music">
                         <div class="card-body">
-
-                            <h5 class="card-title">Mint free Estate </h5>
-                            <input type="text" id="input-field-estate" placeholder="Enter your real estate description">
-                            <button class="btn btn-danger" id="free-mint-estate">Free Mint</button>
+                            <h5 class="card-title">Выпустить музыку</h5>
+                            <input type="text" id="input-field-music" class="form-control mb-3" placeholder="Введите описание">
+                            <button class="btn btn-primary w-100" id="free-mint-music">Выпустить</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img src="dependencies/img/real_estate.jpg" class="card-img-top" alt="Real Estate">
+                        <div class="card-body">
+                            <h5 class="card-title">Недвижимость</h5>
+                            <input type="text" id="input-field-estate" class="form-control mb-3" placeholder="Введите описание">
+                            <button class="btn btn-primary w-100" id="free-mint-estate">Выпустить</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <div style="margin-left: 40rem"><a href="http://localhost:8001">Определитель цены недвижимости</a></div>
     <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"

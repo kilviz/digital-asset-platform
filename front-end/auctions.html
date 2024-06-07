@@ -14,32 +14,28 @@
     <!-- NavBar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Market</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
+            <a class="navbar-brand" href="">DigiTrade</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse nav-items" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link" href="index.html">Главная</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="auctions.html">Аукционы</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link " aria-current="page" href="auctions.html">Live Auctions</a>
+                        <a class="nav-link" href="getFreeItem.html">Выпуск NFT</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="getFreeItem.html">Mint</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link " aria-current="page" href="inventory.html">inventory</a>
+                        <a class="nav-link" href="inventory.html">Инвентарь</a>
                     </li>
                     <li class="nav-item button-wallet">
-                        <button type="button" id="connect-wallet" class="btn btn-secondary">Connect Metamask</button>
+                        <button type="button" id="connect-wallet" class="btn btn-secondary">Подключить Metamask</button>
                     </li>
                 </ul>
-
             </div>
         </div>
     </nav>
@@ -48,7 +44,7 @@
         </div>
         <div class="row inventory-row">
             <h5 class="invontory-title col"> </h5>
-            <h5 class="invontory-title col" id="ItemTitle">Estates</h5>
+            <h5 class="invontory-title col" id="ItemTitle">Недвижимость</h5>
         </div>
         <!-- Waiting model-->
         <div class="modal fade" id="waitingModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
@@ -56,7 +52,7 @@
             <div class="modal-dialog modal-dialog-centered modal-dialog modal-sm" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalCenterTitle">Waiting transaction </h5>
+                        <h5 class="modal-title" id="exampleModalCenterTitle">Ожидание транзакции</h5>
                         </button>
                     </div>
                     <div class="modal-body">
@@ -72,14 +68,14 @@
 
         <!-- Example single danger button -->
         <div class="btn-group inventoryFilter">
-            <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown"
+            <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"
                 aria-expanded="false">
-                filter
+                Фильтр
             </button>
             <ul class="dropdown-menu">
-                <li id="estates1"><a class="dropdown-item" href="#">Estates</a></li>
-                <li id="films1"><a class="dropdown-item" href="#">Films</a></li>
-                <li id="music1"><a class="dropdown-item" href="#">Music</a></li>
+                <li id="estates1"><a class="dropdown-item" href="#">Недвижимость</a></li>
+                <li id="films1"><a class="dropdown-item" href="#">Фильмы</a></li>
+                <li id="music1"><a class="dropdown-item" href="#">Музыка</a></li>
                 <li>
             </ul>
         </div>
@@ -115,34 +111,34 @@
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="bidAuctionTitle">You're trying to Bid</h5>
+                <h5 class="modal-title" id="bidAuctionTitle">Предложить цену</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="closeBtnapau">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             <div class="modal-body">
                 <div class="form-group">
-                    <label for="recipient-name" class="col-form-label">Price:</label>
+                    <label for="recipient-name" class="col-form-label">Цена:</label>
                     <input type="text" class="form-control" id="userBid" placeholder="Your Price ">
                 </div>
                 <div class="form-group">
-                    <label for="recipient-name" class="col-form-label">Highest Bid:</label>
+                    <label for="recipient-name" class="col-form-label">Набольшая ставка:</label>
                     <input type="text" class="form-control" id="highestBid" placeholder="Highest Bid">
                 </div>
                 <div class="form-group">
-                    <label for="recipient-name" class="col-form-label">Item Id:</label>
+                    <label for="recipient-name" class="col-form-label">Id объекта:</label>
                     <input type="text" class="form-control" id="itemidForAuction" placeholder="Enter your Item Id">
                 </div>
                 <div class="form-group">
-                    <label for="recipient-name" class="col-form-label">Auction Id:</label>
+                    <label for="recipient-name" class="col-form-label">Id Аукциона:</label>
                     <input type="text" class="form-control" id="auctionID" placeholder="Enter your Item Id">
                 </div>
             </div>
 
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal"
-                    id="closeBtnAucion">Cancel</button>
-                <button type="button" class="btn btn-danger" id="confirmBid">Bid</button>
+                    id="closeBtnAucion">Отмена</button>
+                <button type="button" class="btn btn-danger" id="confirmBid">Заявка</button>
             </div>
         </div>
     </div>

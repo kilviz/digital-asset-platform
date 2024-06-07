@@ -1,58 +1,113 @@
-.nav-items{
-    padding-left: 20%;
+/* Custom CSS */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: white;
+
 }
 
-.nav-item{
-    padding-left:10px ;
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #007bff;
+
 }
 
-
-.button-wallet{
-   margin-left:50px ;
-}
-
-.first-container{
-    margin-top: 50px;
-}
-
-.text-col{
-    text-align: center;
-    margin-top: 10%;
-   
-}
-.img-first{
-    margin-top: 5%;
-}
-.second-container{
-    margin-top: 20px;
-}
-.live-auction{
-    text-align: center;
-    padding-bottom: 30px;
-}
-.address-row{
-    text-align: center;
-    font-size: medium;
-    margin-top: 20px;
-    margin-bottom: 20px;
+.navbar-nav .nav-link {
+    font-size: 1.1rem;
+    margin-right: 20px;
+    transition: color 0.3s;
+    margin-left: 1rem;
     
 }
-.span_address{
-    font-size: large;
-    font-weight: bolder;
-}
-.inventory-row{
-    padding-bottom: 10px;
 
-}
-.invontory-title{
-    font-size: large;
-    font-weight: 900;
-}
-.inventoryFilter{
-    padding-left: 13px;
+.navbar-nav .nav-link:hover {
+    color: #0056b3;
+    
 }
 
-.mintfree{
-    text-align: center;
+.navbar-nav .nav-item.active .nav-link {
+    font-weight: bold;
+    color: #0056b3;
+    
+}
+
+.button-wallet {
+    display: flex;
+    align-items: center;
+    margin-left: 3rem;
+}
+
+#connect-wallet {
+    background-color: #007bff;
+    border-color: #007bff;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+#connect-wallet:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.description {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 5, 1, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+    margin-top: 3rem;
+    width: 45%;
+}
+.descriptionP{
+    word-break:normal;
+    word-wrap: break-word;
+}
+
+.second-container {
+    background-color: #ffffff;
+    padding: 3rem 0;
+}
+
+.card {
+    border: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 0.25rem 0.6rem rgba(0, 0, 0, 0.3);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    width: 22rem;
+    height: 16rem;
+    margin-left: 2rem;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.form-control {
+    border-radius: 0.25rem;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border: none;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+    box-shadow: 0 4px 8px rgba(220, 53, 69, 0.2);
+}
+
+.mintfree {
+    justify-content: center;
 }

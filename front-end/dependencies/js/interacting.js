@@ -416,11 +416,6 @@ const getFreeItemAbi = [
             "internalType": "bool",
             "name": "onSell",
             "type": "bool"
-          },
-          {
-            "internalType": "string",
-            "name": "text",
-            "type": "string"
           }
         ],
         "internalType": "struct GetFreeItems.ITEM[]",

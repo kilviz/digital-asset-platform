@@ -14,32 +14,28 @@
    <!-- NavBar -->
    <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">Market</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-            aria-label="Toggle navigation">
+        <a class="navbar-brand" href="">DigiTrade</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse nav-items" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    <a class="nav-link" href="index.html">Главная</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link " aria-current="page" href="auctions.html">Live Auctions</a>
+                    <a class="nav-link" href="auctions.html">Аукционы</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="getFreeItem.html">Mint</a>
+                    <a class="nav-link" href="getFreeItem.html">Выпуск NFT</a>
                 </li>
-
-                <li class="nav-item">
-                    <a class="nav-link " aria-current="page" href="inventory.html">inventory</a>
+                <li class="nav-item active">
+                    <a class="nav-link" href="inventory.html">Инвентарь</a>
                 </li>
                 <li class="nav-item button-wallet">
-                    <button type="button" id="connect-wallet" class="btn btn-secondary">Connect Metamask</button>
+                    <button type="button" id="connect-wallet" class="btn btn-secondary">Подключить Metamask</button>
                 </li>
             </ul>
-
         </div>
     </div>
 </nav>
@@ -49,24 +45,24 @@
         <div class="row address-row">
         </div>
         <div class="row inventory-row">
-            <h5 class="invontory-title col">Inventory: </h5>
-            <h5 class="invontory-title col" id="ItemTitle">Available Items</h5>
+            <h5 class="invontory-title col">Инвентарь: </h5>
+            <h5 class="invontory-title col" id="ItemTitle">Мои предметы</h5>
         </div>
         <div class="withra"></div>
 
         <!-- Example single danger button -->
         
         <div class="btn-group inventoryFilter ">
-            <button type="button" class="btn btn-danger dropdown-toggle" data-bs-toggle="dropdown"
+            <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown"
                 aria-expanded="false">
-                filter
+                Фильтр
             </button>
             <ul class="dropdown-menu">
-                <li id="available"><a class="dropdown-item" href="#">Available</a></li>
-                <li id="onSellItems"><a class="dropdown-item" href="#">On Sell</a></li>
-                <li id="soldItems"><a class="dropdown-item" href="#">Sold</a></li>
-                <li id="acutiondropdown"><a class="dropdown-item" href="#">My Auctions</a></li>
-                <li id="badeAcution"><a class="dropdown-item" href="#">Bade Auctions</a></li>
+                <li id="available"><a class="dropdown-item" href="#">Доступно</a></li>
+                <li id="onSellItems"><a class="dropdown-item" href="#">На продаже</a></li>
+                <li id="soldItems"><a class="dropdown-item" href="#">Продано</a></li>
+                <li id="acutiondropdown"><a class="dropdown-item" href="#">Мои аукционы</a></li>
+                <li id="badeAcution"><a class="dropdown-item" href="#">Объявленные аукционы</a></li>
                 <li>
             </ul>
         </div>
@@ -76,26 +72,26 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalCenterTitle">Do you want to sell your item ?</h5>
+                        <h5 class="modal-title" id="exampleModalCenterTitle">Хотитете продавть свой предмет?</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="closeBtn2">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
                         <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">Price:</label>
+                            <label for="recipient-name" class="col-form-label">Цена:</label>
                             <input type="text" class="form-control" id="price" placeholder="Price in Etheruem">
                         </div>
                         <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">Item Id:</label>
+                            <label for="recipient-name" class="col-form-label">Id предмета:</label>
                             <input type="text" class="form-control" id="itemid" placeholder="Enter your Item Id">
                         </div>
                     </div>
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal"
-                            id="closeBtn">Cancel</button>
-                        <button type="button" class="btn btn-danger" id="confirmedSellBtn">Sell</button>
+                            id="closeBtn">Отмена</button>
+                        <button type="button" class="btn btn-danger" id="confirmedSellBtn">Продать</button>
                     </div>
                 </div>
             </div>
@@ -106,30 +102,30 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="auctionModalTitle">Do you want to sell your item ?</h5>
+                        <h5 class="modal-title" id="auctionModalTitle">Хотитете продавть свой предмет?</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="closeBtnapau">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
                         <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">Price:</label>
+                            <label for="recipient-name" class="col-form-label">Цена:</label>
                             <input type="text" class="form-control" id="AuctionPrice" placeholder="First price in Etheruem">
                         </div>
                         <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">Hours:</label>
+                            <label for="recipient-name" class="col-form-label">Часы:</label>
                             <input type="text" class="form-control" id="hours" placeholder="How many hour">
                         </div>
                         <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">Item Id:</label>
+                            <label for="recipient-name" class="col-form-label">Id предмета:</label>
                             <input type="text" class="form-control" id="itemidForAuction" placeholder="Enter your Item Id">
                         </div>
                     </div>
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal"
-                            id="closeBtnAucion">Cancel</button>
-                        <button type="button" class="btn btn-danger" id="auctionSell">Sell</button>
+                            id="closeBtnAucion">Отмена</button>
+                        <button type="button" class="btn btn-danger" id="auctionSell">Продать</button>
                     </div>
                 </div>
             </div>
@@ -140,7 +136,7 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="approveAuctionTitle">You need to approve your item</h5>
+                        <h5 class="modal-title" id="approveAuctionTitle">Вам необходимо подтвердить ваш предмет</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="closeBtn3">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -148,8 +144,8 @@
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal"
-                            id="closemodalAuction">Cancel</button>
-                        <button type="button" class="btn btn-danger" id="confirmeApproveAuction">Approve</button>
+                            id="closemodalAuction">Отмена</button>
+                        <button type="button" class="btn btn-danger" id="confirmeApproveAuction">Подтвердить</button>
                     </div>
                 </div>
             </div>
@@ -160,7 +156,7 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="approveModalTitle">You need to approve your item</h5>
+                        <h5 class="modal-title" id="approveModalTitle">Вам необходимо подтвердить ваш предмет</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="closeBtn3">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -168,8 +164,8 @@
 
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal"
-                            id="closeBtn4">Cancel</button>
-                        <button type="button" class="btn btn-danger" id="confirmeApprove">Approve</button>
+                            id="closeBtn4">Отмена</button>
+                        <button type="button" class="btn btn-danger" id="confirmeApprove">Подтвердить</button>
                     </div>
                 </div>
             </div>
@@ -180,7 +176,7 @@
             <div class="modal-dialog modal-dialog-centered modal-dialog modal-sm" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalCenterTitle">Waiting transaction </h5>
+                        <h5 class="modal-title" id="exampleModalCenterTitle">Ожидание транзакции</h5>
                         </button>
                     </div>
                     <div class="modal-body">
