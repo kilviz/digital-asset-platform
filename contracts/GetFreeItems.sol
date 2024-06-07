@@ -1,4 +1,4 @@
-// contracts/GameMarketplace.sol
+// contracts/Marketplace.sol
 // SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.8;
@@ -18,7 +18,7 @@ contract GetFreeItems is ERC1155, Ownable{
 
     enum TYPE {
         NONE,
-        GAME,
+        ESTATE,
         FILM,
         MUSIC
     }
@@ -131,7 +131,7 @@ contract GetFreeItems is ERC1155, Ownable{
 
     function getType(uint _choice) external pure returns(TYPE){
         if(_choice ==1){
-            return TYPE.GAME;
+            return TYPE.ESTATE;
         }
         else if (_choice ==2){
             return TYPE.FILM;

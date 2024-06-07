@@ -5,10 +5,10 @@ const FreeItemsContract = getFreeItemsContract()
 const SellAndBuyContract = buyAndSellContract()
 const AuctionAndBidsContract = auctionAndBidsContract()
 
-const gamesCon = document.getElementById("gamesCon")
+const estatesCon = document.getElementById("estatesCon")
 const filmCon = document.getElementById("filmCon")
 const musicCon = document.getElementById("musicCon")
-const games1 = document.getElementById("games1")
+const estates1 = document.getElementById("estates1")
 const films1 = document.getElementById("films1")
 const music1 = document.getElementById("music1")
 const ItemTitle = document.getElementById("ItemTitle")
@@ -42,7 +42,7 @@ function renderInAuction(title, nftId, price, src,timeLeft,auctionId) {
            </div>`
 }
 
-window.onload = gameAuction()
+window.onload = estateAuction()
 function convertHMS(value) {
     const sec = parseInt(value, 10); // convert value to number if it's string
     let hours = Math.floor(sec / 3600); // get hours
@@ -54,10 +54,10 @@ function convertHMS(value) {
     if (seconds < 10) { seconds = "0" + seconds; }
     return hours + ':' + minutes + ':' + seconds; // Return is HH : MM : SS
 }
-async function gameAuction(){
-    games1.style.visibility = "hidden"
+async function estateAuction(){
+    estates1.style.visibility = "hidden"
     const allAuctions = await AuctionAndBidsContract.totalAuctionsCreated()
-    const gameImg = "dependencies/img/game.png" 
+    const estateImg = "dependencies/img/real_estate.jpg" 
     for (let index = 1; index <=allAuctions; index++) {
         const auction = await AuctionAndBidsContract.getAuctionDetails(index)
             const item = await FreeItemsContract.getItemDetails(auction.itemId)
@@ -71,7 +71,7 @@ async function gameAuction(){
                 else {
                     timeInS = "00:00:00"
                 }
-                renderInAuction("Game",auction.itemId,ethers.utils.formatEther(auction.highestBid),gameImg,timeInS,auction.id)
+                renderInAuction("Real estate",auction.itemId,ethers.utils.formatEther(auction.highestBid),estateImg,timeInS,auction.id)
             }
         
     }
@@ -120,34 +120,34 @@ async function musicAuction(){
 }
 
 
-games1.addEventListener("click",()=>{
+estates1.addEventListener("click",()=>{
     filmCon.innerHTML = ""
     musicCon.innerHTML = ""
     container.innerHTML=""
-    ItemTitle.textContent = "Games"
+    ItemTitle.textContent = "Estates"
     films1.style.visibility = "visible"
     music1.style.visibility = "visible"
-    games1.style.visibility = "hidden"
-    gameAuction()
+    estates1.style.visibility = "hidden"
+    estateAuction()
 })
 films1.addEventListener("click",()=>{
     musicCon.innerHTML = ""
     container.innerHTML=""
-    gamesCon.innerHTML = ""
+    estatesCon.innerHTML = ""
     ItemTitle.textContent = "Films"
     films1.style.visibility = "hidden"
     music1.style.visibility = "visible"
-    games1.style.visibility = "visible"
+    estates1.style.visibility = "visible"
     filmAuction()
 })
 music1.addEventListener("click",()=>{
     filmCon.innerHTML = ""
-    gamesCon.innerHTML = ""
+    estatesCon.innerHTML = ""
     container.innerHTML=""
     ItemTitle.textContent = "Music"
     films1.style.visibility = "visible"
     music1.style.visibility = "hidden"
-    games1.style.visibility = "visible"
+    estates1.style.visibility = "visible"
     musicAuction()
 })
 

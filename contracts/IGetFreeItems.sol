@@ -1,11 +1,11 @@
-// contracts/GameMarketplace.sol
+// contracts/Marketplace.sol
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.8;
 
 interface IGetFreeItems {
     enum TYPE {
         NONE,
-        GAME,
+        ESTATE,
         FILM,
         MUSIC
     }
