@@ -36,9 +36,9 @@ const badeAcutionSec = document.getElementById("badeAcutionSec")
 function renderCards(title, nftId, src, text) {
     document.getElementById("containerRow").innerHTML += `<div class="col id="rowone"">
     
-          <div class="card shadow-lg p-3 mb-5 bg-white rounded"  style="width: 16rem; ">
+          <div class="card shadow-lg p-3 mb-5 bg-white rounded"  style="width: 24rem; ">
           <div id="card"  class="card">
-            <img src=${src} class="card-img-top" alt="...">
+            <img src=${src} class="card-img" alt="...">
             <div class="card-body">
             
                 <h5 class="card-title">${title}</h5>
@@ -53,8 +53,8 @@ function renderCards(title, nftId, src, text) {
 }
 function renderOnSellItems(title, nftId, price, src) {
     document.getElementById("onSellRow").innerHTML += `<div class="col onsellCol">
-          <div class="card shadow-lg p-3 mb-5 bg-white rounded" style="width: 16rem;">
-            <img src=${src} class="card-img-top" alt="...">
+          <div class="card shadow-lg p-3 mb-5 bg-white rounded" style="width: 24rem;">
+            <img src=${src} class="card-img" alt="...">
             <div class="card-body">
   
                 <h5 class="card-title">${title}</h5>
@@ -68,8 +68,8 @@ function renderOnSellItems(title, nftId, price, src) {
 }
 function renderSoldItems(title, nftId, src) {
     document.getElementById("soldRow").innerHTML += `<div class="col onsellCol">
-          <div class="card shadow-lg p-3 mb-5 bg-white rounded" style="width: 16rem;">
-            <img src=${src} class="card-img-top" alt="...">
+          <div class="card shadow-lg p-3 mb-5 bg-white rounded" style="width: 24rem;">
+            <img src=${src} class="card-img" alt="...">
             <div class="card-body">
                 <h5 class="card-title">${title}</h5>
                 <span class="card-text">Nft Id : <span id="nft-film-id">${nftId}</span></span><br>
@@ -80,8 +80,8 @@ function renderSoldItems(title, nftId, src) {
 }
 function renderInAuction(title, nftId, price, src, timeLeft,auctionId) {
     document.getElementById("inAuction").innerHTML += `<div class="col onsellCol">
-          <div class="card shadow-lg p-3 mb-5 bg-white rounded" style="width: 16rem;">
-            <img src=${src} class="card-img-top" alt="...">
+          <div class="card shadow-lg p-3 mb-5 bg-white rounded" style="width: 24rem;">
+            <img src=${src} class="card-img" alt="...">
             <div class="card-body">
   
                 <h5 class="card-title">${title}</h5>
@@ -97,8 +97,8 @@ function renderInAuction(title, nftId, price, src, timeLeft,auctionId) {
 }
 function renderBadeAuction(title, nftId, price, src, timeLeft,auctionId,userBids) {
     document.getElementById("badeAcutionSec").innerHTML += `<div class="col onsellCol">
-          <div class="card shadow-lg p-3 mb-5 bg-white rounded" style="width: 16rem;">
-            <img src=${src} class="card-img-top" alt="...">
+          <div class="card shadow-lg p-3 mb-5 bg-white rounded" style="width: 24rem;">
+            <img src=${src} class="card-img" alt="...">
             <div class="card-body">
   
                 <h5 class="card-title">${title}</h5>

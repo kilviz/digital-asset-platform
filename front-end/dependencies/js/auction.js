@@ -25,8 +25,8 @@ const auctionID = document.getElementById("auctionID")
 function renderInAuction(title, nftId, price, src,timeLeft,auctionId) {
     document.getElementById("container").innerHTML += `
     <div class="col onsellCol">
-          <div class="card shadow-lg p-3 mb-5 bg-white rounded" style="width: 16rem;">
-            <img src=${src} class="card-img-top" alt="...">
+          <div class="card shadow-lg p-3 mb-5 bg-white rounded" style="width: 24rem;">
+            <img src=${src} class="card-img" alt="...">
             <div class="card-body">
   
                 <h5 class="card-title">${title}</h5>
