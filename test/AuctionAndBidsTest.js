@@ -8,7 +8,7 @@ describe("Create Auction", function () {
 
         [owner, account1, account2, account3] = await ethers.getSigners()
         const contract1 = await deployGetFreeMint()
-        const getFreeItem = await contract1.connect(account1).getFreeItem(2)
+        const getFreeItem = await contract1.connect(account1).getFreeItem(2,'')
         const contract2 = await deployAuctionAndBid()
         const changeBuyAndSellAddress = await contract1.connect(owner).changeBuyAndSellAddress(contract2.address,contract2.address)
         const approve = await contract1.connect(account1).setApprovalForAll(contract2.address,true)
@@ -21,7 +21,7 @@ describe("Create Auction", function () {
     it("Should revert because the price is 0",async function(){
         [owner, account1, account2, account3] = await ethers.getSigners()
         const contract1 = await deployGetFreeMint()
-        const getFreeItem = await contract1.connect(account1).getFreeItem(2)
+        const getFreeItem = await contract1.connect(account1).getFreeItem(2,'')
         const contract2 = await deployAuctionAndBid()
         const changeBuyAndSellAddress = await contract1.connect(owner).changeBuyAndSellAddress(contract2.address,contract2.address)
         const approve = await contract1.connect(account1).setApprovalForAll(contract2.address,true)
@@ -36,7 +36,7 @@ describe("Start Bids", function () {
 
         [owner, account1, account2, account3] = await ethers.getSigners()
         const contract1 = await deployGetFreeMint()
-        const getFreeItem = await contract1.connect(account1).getFreeItem(2)
+        const getFreeItem = await contract1.connect(account1).getFreeItem(2,'')
         const contract2 = await deployAuctionAndBid()
         const changeBuyAndSellAddress = await contract1.connect(owner).changeBuyAndSellAddress(contract2.address,contract2.address)
         const approve = await contract1.connect(account1).setApprovalForAll(contract2.address,true)
@@ -47,7 +47,7 @@ describe("Start Bids", function () {
     it("Should revert because the amount < highest bid", async function () {
         [owner, account1, account2, account3] = await ethers.getSigners()
         const contract1 = await deployGetFreeMint()
-        const getFreeItem = await contract1.connect(account1).getFreeItem(2)
+        const getFreeItem = await contract1.connect(account1).getFreeItem(2,'')
         const contract2 = await deployAuctionAndBid()
         const changeBuyAndSellAddress = await contract1.connect(owner).changeBuyAndSellAddress(contract2.address,contract2.address)
         const approve = await contract1.connect(account1).setApprovalForAll(contract2.address,true)
@@ -57,7 +57,7 @@ describe("Start Bids", function () {
     it("Should revert because the time end", async function () {
         [owner, account1, account2, account3] = await ethers.getSigners()
         const contract1 = await deployGetFreeMint()
-        const getFreeItem = await contract1.connect(account1).getFreeItem(2)
+        const getFreeItem = await contract1.connect(account1).getFreeItem(2,'')
         const contract2 = await deployAuctionAndBid()
         const changeBuyAndSellAddress = await contract1.connect(owner).changeBuyAndSellAddress(contract2.address,contract2.address)
         const approve = await contract1.connect(account1).setApprovalForAll(contract2.address,true)
@@ -68,7 +68,7 @@ describe("Start Bids", function () {
     it("Should revert because is not started", async function () {
         [owner, account1, account2, account3] = await ethers.getSigners()
         const contract1 = await deployGetFreeMint()
-        const getFreeItem = await contract1.connect(account1).getFreeItem(2)
+        const getFreeItem = await contract1.connect(account1).getFreeItem(2,'')
         const contract2 = await deployAuctionAndBid()
         const changeBuyAndSellAddress = await contract1.connect(owner).changeBuyAndSellAddress(contract2.address,contract2.address)
         const approve = await contract1.connect(account1).setApprovalForAll(contract2.address,true)
@@ -79,7 +79,7 @@ describe("Start Bids", function () {
     it("the amount sent is the highest amount and the caller is the highest bidder", async function () {
         [owner, account1, account2, account3] = await ethers.getSigners()
         const contract1 = await deployGetFreeMint()
-        const getFreeItem = await contract1.connect(account1).getFreeItem(2)
+        const getFreeItem = await contract1.connect(account1).getFreeItem(2,'')
         const contract2 = await deployAuctionAndBid()
         const changeBuyAndSellAddress = await contract1.connect(owner).changeBuyAndSellAddress(contract2.address,contract2.address)
         const approve = await contract1.connect(account1).setApprovalForAll(contract2.address,true)
@@ -98,7 +98,7 @@ describe("End Auction", function () {
 
         [owner, account1, account2, account3] = await ethers.getSigners()
         const contract1 = await deployGetFreeMint()
-        const getFreeItem = await contract1.connect(account1).getFreeItem(2)
+        const getFreeItem = await contract1.connect(account1).getFreeItem(2,'')
         const contract2 = await deployAuctionAndBid()
         const changeBuyAndSellAddress = await contract1.connect(owner).changeBuyAndSellAddress(contract2.address,contract2.address)
         const approve = await contract1.connect(account1).setApprovalForAll(contract2.address,true)
@@ -109,7 +109,7 @@ describe("End Auction", function () {
 
         [owner, account1, account2, account3] = await ethers.getSigners()
         const contract1 = await deployGetFreeMint()
-        const getFreeItem = await contract1.connect(account1).getFreeItem(2)
+        const getFreeItem = await contract1.connect(account1).getFreeItem(2,'')
         const contract2 = await deployAuctionAndBid()
         const changeBuyAndSellAddress = await contract1.connect(owner).changeBuyAndSellAddress(contract2.address,contract2.address)
         const approve = await contract1.connect(account1).setApprovalForAll(contract2.address,true)
@@ -129,7 +129,7 @@ describe("Cancel Auction", function () {
 
         [owner, account1, account2, account3] = await ethers.getSigners()
         const contract1 = await deployGetFreeMint()
-        const getFreeItem = await contract1.connect(account1).getFreeItem(2)
+        const getFreeItem = await contract1.connect(account1).getFreeItem(2,'')
         const contract2 = await deployAuctionAndBid()
         const changeBuyAndSellAddress = await contract1.connect(owner).changeBuyAndSellAddress(contract2.address,contract2.address)
         const approve = await contract1.connect(account1).setApprovalForAll(contract2.address,true)
@@ -140,7 +140,7 @@ describe("Cancel Auction", function () {
 
         [owner, account1, account2, account3] = await ethers.getSigners()
         const contract1 = await deployGetFreeMint()
-        const getFreeItem = await contract1.connect(account1).getFreeItem(2)
+        const getFreeItem = await contract1.connect(account1).getFreeItem(2,'')
         const contract2 = await deployAuctionAndBid()
         const changeBuyAndSellAddress = await contract1.connect(owner).changeBuyAndSellAddress(contract2.address,contract2.address)
         const approve = await contract1.connect(account1).setApprovalForAll(contract2.address,true)
@@ -155,7 +155,7 @@ describe("Cancel Auction", function () {
 
         [owner, account1, account2, account3] = await ethers.getSigners()
         const contract1 = await deployGetFreeMint()
-        const getFreeItem = await contract1.connect(account1).getFreeItem(2)
+        const getFreeItem = await contract1.connect(account1).getFreeItem(2,'')
         const contract2 = await deployAuctionAndBid()
         const changeBuyAndSellAddress = await contract1.connect(owner).changeBuyAndSellAddress(contract2.address,contract2.address)
         const approve = await contract1.connect(account1).setApprovalForAll(contract2.address,true)
@@ -168,7 +168,7 @@ describe("Cancel Auction", function () {
 
         [owner, account1, account2, account3] = await ethers.getSigners()
         const contract1 = await deployGetFreeMint()
-        const getFreeItem = await contract1.connect(account1).getFreeItem(2)
+        const getFreeItem = await contract1.connect(account1).getFreeItem(2,'')
         const contract2 = await deployAuctionAndBid()
         const changeBuyAndSellAddress = await contract1.connect(owner).changeBuyAndSellAddress(contract2.address,contract2.address)
         const approve = await contract1.connect(account1).setApprovalForAll(contract2.address,true)
@@ -182,7 +182,7 @@ describe("Cancel Auction", function () {
 
         [owner, account1, account2, account3] = await ethers.getSigners()
         const contract1 = await deployGetFreeMint()
-        const getFreeItem = await contract1.connect(account1).getFreeItem(2)
+        const getFreeItem = await contract1.connect(account1).getFreeItem(2,'')
         const contract2 = await deployAuctionAndBid()
         const changeBuyAndSellAddress = await contract1.connect(owner).changeBuyAndSellAddress(contract2.address,contract2.address)
         const approve = await contract1.connect(account1).setApprovalForAll(contract2.address,true)
@@ -200,7 +200,7 @@ describe("Withdraw Bids", function () {
 
         [owner, account1, account2, account3] = await ethers.getSigners()
         const contract1 = await deployGetFreeMint()
-        const getFreeItem = await contract1.connect(account1).getFreeItem(2)
+        const getFreeItem = await contract1.connect(account1).getFreeItem(2,'')
         const contract2 = await deployAuctionAndBid()
         const changeBuyAndSellAddress = await contract1.connect(owner).changeBuyAndSellAddress(contract2.address,contract2.address)
         const approve = await contract1.connect(account1).setApprovalForAll(contract2.address,true)
