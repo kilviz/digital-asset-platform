@@ -25,4 +25,3 @@ npx hardhat run scripts/deploy.js --network localhost
 
 Хуако В.О., МПИ-23-1-1
 Абакумов А.А., МПИ-23-1-1
-Лим В.Л., МПИ-23-1-1
